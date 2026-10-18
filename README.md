@@ -1,2 +1,2 @@
-# -janetradeva.github.io
+# janetradeva.github.io
     Официален сайт на книгата „Светът през очите на дете“ от Жанет Радева.
