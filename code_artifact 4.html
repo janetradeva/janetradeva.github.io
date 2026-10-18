@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="bg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Светът през очите на дете — Жанет Радева</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        creamBg: '#FAF6F0',
+                        creamCard: '#FFFFFF',
+                        warmBorder: '#EFE5D8',
+                        warmAccent: '#E06A55',
+                        warmRose: '#F48BA2',
+                        amberGlow: '#EAA93E',
+                        softTeal: '#3A9B93',
+                        tealLight: '#EBF6F5',
+                        textDark: '#2C2723',
+                        textMuted: '#70685E'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        hand: ['"Caveat"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF6F0;
+            color: #2C2723;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(224, 106, 85, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(58, 155, 147, 0.09) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(234, 169, 62, 0.07) 0%, transparent 55%);
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .emotional-card {
+            background-color: #FFFFFF;
+            border: 1px solid #EFE5D8;
+            box-shadow: 0 12px 32px -10px rgba(74, 58, 42, 0.07);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .emotional-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(74, 58, 42, 0.12);
+        }
+
+        /* Strictly permanent blur overlay on book cover */
+        .teaser-blur {
+            filter: blur(18px) saturate(1.3) brightness(1.02);
+            transform: scale(1.08);
+            transition: none !important;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes softPulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.03); }
+        }
+        .glow-pulse {
+            animation: softPulse 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-creamBg text-textDark antialiased min-h-screen flex flex-col selection:bg-warmAccent selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-creamBg/90 backdrop-blur-md border-b border-warmBorder/70 transition-all">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="font-serif text-2xl font-bold tracking-tight text-textDark hover:text-warmAccent transition-colors flex items-center gap-3">
+                <span class="w-2.5 h-2.5 rounded-full bg-warmAccent inline-block"></span>
+                <span>Жанет Радева</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-9 text-xs uppercase tracking-widest font-semibold text-textMuted">
+                <a href="#hero" class="hover:text-warmAccent transition-colors">Начало</a>
+                <a href="#about-book" class="hover:text-softTeal transition-colors">За книгата</a>
+                <a href="#about-author" class="hover:text-amberGlow transition-colors">За мен</a>
+                <a href="#interactive" class="hover:text-warmAccent transition-colors">Интерактивно</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-textDark hover:text-warmAccent focus:outline-none" aria-label="Меню">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-creamBg border-b border-warmBorder px-6 py-4 space-y-3 text-xs uppercase tracking-widest font-semibold text-textMuted">
+            <a href="#hero" class="block py-1 hover:text-warmAccent transition-colors mobile-link">Начало</a>
+            <a href="#about-book" class="block py-1 hover:text-softTeal transition-colors mobile-link">За книгата</a>
+            <a href="#about-author" class="block py-1 hover:text-amberGlow transition-colors mobile-link">За мен</a>
+            <a href="#interactive" class="block py-1 hover:text-warmAccent transition-colors mobile-link">Интерактивно</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section id="hero" class="relative py-16 md:py-24 px-6 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-16 border-b border-warmBorder/60">
+            
+            <div class="flex-1 text-center md:text-left space-y-6 z-10">
+                <div class="inline-flex items-center gap-2.5 bg-white border border-amberGlow/30 px-4 py-1.5 rounded-full shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-amberGlow glow-pulse"></span>
+                    <span class="text-xs uppercase tracking-widest text-textDark font-bold">Очаквай скоро</span>
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight text-textDark">
+                    Светът през очите на дете
+                </h1>
+                
+                <p class="text-base sm:text-lg text-textMuted leading-relaxed font-normal max-w-md mx-auto md:mx-0">
+                    На 13 написах първата си книга — „Светът през очите на дете“. Очаквай скоро!
+                </p>
+
+                <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4 text-xs tracking-wider uppercase font-semibold">
+                    <a href="#about-book" class="bg-warmAccent hover:bg-warmAccent/90 text-white px-7 py-3.5 rounded-full shadow-sm transition-all hover:-translate-y-0.5">
+                        Открийте темите
+                    </a>
+                    <a href="#interactive" class="bg-white border border-softTeal text-softTeal hover:bg-tealLight px-7 py-3.5 rounded-full transition-all">
+                        Разгледайте игрите
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex-1 w-full max-w-sm z-10">
+                <div class="emotional-card p-7 sm:p-8 text-center flex flex-col items-center justify-center rounded-2xl relative overflow-hidden">
+                    
+                    <p class="text-xs uppercase tracking-widest text-softTeal font-bold mb-4 flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-softTeal"></span>
+                        <span>Засега — само един поглед…</span>
+                    </p>
+                    
+                    <!-- Cover wrapper containing fallback rendering matching user's original image colors & layout -->
+                    <div class="relative w-52 h-80 rounded-xl overflow-hidden shadow-md border border-warmBorder flex items-center justify-center my-2 select-none bg-white">
+                        
+                        <!-- Real local image attempt -->
+                        <img src="D32F5D0D-E131-463C-A776-958F57C7CECE.png" 
+                             alt="Замъглена корица на книгата" 
+                             class="teaser-blur absolute inset-0 w-full h-full object-cover z-20"
+                             onerror="this.style.display='none'; document.getElementById('cover-svg-fallback').classList.remove('hidden');" />
+
+                        <!-- SVG Fallback that mirrors user's exact drawing colors & shapes (blur applied) -->
+                        <div id="cover-svg-fallback" class="teaser-blur absolute inset-0 w-full h-full z-10">
+                            <svg viewBox="0 0 300 450" class="w-full h-full object-cover">
+                                <!-- Background Paper -->
+                                <rect width="300" height="450" fill="#FAF6F0"/>
+                                
+                                <!-- Top Pink Crayon Title Bar -->
+                                <path d="M 15 25 Q 150 15 285 30 Q 290 85 280 110 Q 150 120 15 100 Z" fill="#F48BA2" opacity="0.85"/>
+                                
+                                <!-- Yellow Crayon Cloud Subtitle -->
+                                <path d="M 60 120 Q 150 105 240 125 Q 255 185 235 200 Q 150 205 55 185 Z" fill="#EAA93E" opacity="0.75"/>
+                                
+                                <!-- Wooden Signpost on left -->
+                                <rect x="35" y="160" width="12" height="230" fill="#8B5A2B"/>
+                                <!-- Signpost arrows -->
+                                <path d="M 10 190 L 80 190 L 95 200 L 80 210 L 10 210 Z" fill="#E06A55"/>
+                                <path d="M 10 220 L 80 220 L 95 230 L 80 240 L 10 240 Z" fill="#9B81E0"/>
+                                <path d="M 10 250 L 80 250 L 95 260 L 80 270 L 10 270 Z" fill="#3A9B93"/>
+                                <path d="M 10 280 L 80 280 L 95 290 L 80 300 L 10 300 Z" fill="#71B280"/>
+                                <path d="M 10 310 L 80 310 L 95 320 L 80 330 L 10 330 Z" fill="#EAA93E"/>
+                                <path d="M 10 340 L 80 340 L 95 350 L 80 360 L 10 360 Z" fill="#F48BA2"/>
+
+                                <!-- Globe at bottom left -->
+                                <circle cx="50" cy="400" r="45" fill="#4A90E2"/>
+                                <path d="M 20 390 Q 50 370 80 410 Q 40 430 20 390 Z" fill="#71B280"/>
+
+                                <!-- Girl Drawing: Hair, Shirt, Jeans -->
+                                <path d="M 80 250 C 70 180 230 180 220 250 L 235 450 L 65 450 Z" fill="#3D261A"/> <!-- Hair -->
+                                <path d="M 105 300 Q 150 290 195 300 L 210 410 L 90 410 Z" fill="#F48BA2"/> <!-- Pink Shirt -->
+                                <path d="M 100 410 L 200 410 L 210 450 L 90 450 Z" fill="#2B6CB0"/> <!-- Jeans -->
+                                
+                                <!-- Magnifying Glass face -->
+                                <circle cx="170" cy="260" r="38" fill="#FCEADE" stroke="#2C2723" stroke-width="4"/>
+                                <circle cx="170" cy="260" r="32" fill="#EBF6F5" opacity="0.6"/>
+
+                                <!-- Coastline background right -->
+                                <path d="M 200 230 Q 250 210 300 240 L 300 360 Q 230 380 200 330 Z" fill="#4A90E2" opacity="0.7"/>
+                                <path d="M 230 210 L 300 210 L 300 320 Q 260 270 230 210 Z" fill="#71B280"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-textMuted font-light italic mt-5">
+                        Пълният облик остава тайна за момента
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-book" class="py-20 px-6 max-w-5xl mx-auto border-b border-warmBorder/60">
+            <div class="text-center max-w-xl mx-auto mb-16 space-y-3">
+                <span class="text-xs uppercase tracking-widest text-softTeal font-bold">Темите в книгата</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-textDark">Какво се крие в тези страници</h2>
+                <div class="w-12 h-0.5 bg-warmAccent mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Theme 1 -->
+                <div class="emotional-card p-7 rounded-xl space-y-3 relative group border-t-2 border-t-warmAccent">
+                    <span class="text-xs font-bold uppercase tracking-widest text-warmAccent">01</span>
+                    <h3 class="font-serif text-2xl font-normal text-textDark">Приятелство</h3>
+                    <p class="text-textMuted text-xs leading-relaxed font-light">
+                        За искрените връзки, подкрепата и спокойствието, че не си сам по своя път.
+                    </p>
+                </div>
+
+                <!-- Theme 2 -->
+                <div class="emotional-card p-7 rounded-xl space-y-3 relative group border-t-2 border-t-amberGlow">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amberGlow">02</span>
+                    <h3 class="font-serif text-2xl font-normal text-textDark">Мечти</h3>
+                    <p class="text-textMuted text-xs leading-relaxed font-light">
+                        За смелостта да гледаш напред и да вярваш във всички възможности пред теб.
+                    </p>
+                </div>
+
+                <!-- Theme 3 -->
+                <div class="emotional-card p-7 rounded-xl space-y-3 relative group border-t-2 border-t-softTeal">
+                    <span class="text-xs font-bold uppercase tracking-widest text-softTeal">03</span>
+                    <h3 class="font-serif text-2xl font-normal text-textDark">Въображение</h3>
+                    <p class="text-textMuted text-xs leading-relaxed font-light">
+                        За способността да виждаш необикновеното и красивото в най-простите неща.
+                    </p>
+                </div>
+
+                <!-- Theme 4 -->
+                <div class="emotional-card p-7 rounded-xl space-y-3 relative group border-t-2 border-t-warmRose">
+                    <span class="text-xs font-bold uppercase tracking-widest text-warmRose">04</span>
+                    <h3 class="font-serif text-2xl font-normal text-textDark">Промяна</h3>
+                    <p class="text-textMuted text-xs leading-relaxed font-light">
+                        За израстването, малките открития и преоткриването на света всеки ден.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-author" class="py-20 px-6 max-w-4xl mx-auto border-b border-warmBorder/60">
+            <div class="emotional-card p-8 sm:p-12 md:p-14 rounded-2xl">
+                <div class="space-y-4 text-center md:text-left max-w-3xl mx-auto">
+                    <span class="text-xs uppercase tracking-widest text-warmAccent font-bold">За мен</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-textDark">Аз съм Жанет Радева</h2>
+                    <p class="text-textMuted text-sm sm:text-base leading-relaxed font-light">
+                        Казвам се Жанет Радева и съм на 13 години. Обичам да чета, да уча и да откривам нови неща. Интересувам се от различни науки, участвам в състезания и обичам да творя. „Светът през очите на дете“ е първата ми книга, в която споделям своите мисли за света и нещата, които ме вълнуват.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2.5 text-xs font-medium tracking-wider text-textDark uppercase">
+                        <span class="px-3.5 py-1.5 bg-warmAccent/10 text-warmAccent rounded-full">Четене</span>
+                        <span class="px-3.5 py-1.5 bg-tealLight text-softTeal rounded-full">Учене & Наука</span>
+                        <span class="px-3.5 py-1.5 bg-amberGlow/15 text-textDark rounded-full">Творчество</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive" class="py-20 px-6 max-w-5xl mx-auto space-y-20">
+            
+            <!-- Quiz Subsection -->
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-10 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-warmAccent font-bold">Размисъл</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-textDark">Викторина: Добрината и приятелството</h2>
+                </div>
+
+                <div id="quiz-container" class="emotional-card p-6 sm:p-10 rounded-2xl">
+                    <div id="quiz-question-box">
+                        <div class="flex justify-between items-center mb-6 text-xs uppercase tracking-widest font-semibold text-textMuted border-b border-warmBorder pb-3">
+                            <span id="quiz-progress">Въпрос 1 от 3</span>
+                            <span id="quiz-score-indicator" class="text-warmAccent font-bold">Точки: 0</span>
+                        </div>
+                        <h3 id="quiz-question-text" class="font-serif text-xl sm:text-2xl font-normal text-textDark mb-6">
+                            Зареждане...
+                        </h3>
+                        <div id="quiz-options" class="space-y-3"></div>
+                    </div>
+
+                    <div id="quiz-explanation-box" class="hidden mt-6 p-5 border border-softTeal/30 rounded-xl bg-tealLight/50">
+                        <h4 class="text-xs uppercase tracking-widest font-bold text-softTeal mb-2">Обяснение</h4>
+                        <p id="quiz-explanation-text" class="text-xs text-textDark leading-relaxed font-light mb-4"></p>
+                        <button id="quiz-next-btn" class="bg-warmAccent hover:bg-warmAccent/90 text-white text-xs uppercase tracking-widest font-bold px-6 py-3 rounded-full transition-colors">
+                            Следващ въпрос
+                        </button>
+                    </div>
+
+                    <div id="quiz-result-box" class="hidden text-center py-6 space-y-4">
+                        <h3 class="font-serif text-3xl font-normal text-textDark">Викторината приключи</h3>
+                        <p id="quiz-final-score" class="text-sm font-semibold text-softTeal"></p>
+                        <p id="quiz-final-message" class="text-xs text-textMuted max-w-md mx-auto leading-relaxed font-light"></p>
+                        <button id="quiz-restart-btn" class="bg-amberGlow text-textDark hover:bg-amberGlow/90 text-xs uppercase tracking-widest font-bold px-7 py-3.5 rounded-full transition-colors">
+                            Опитайте отново
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Memory Game Subsection -->
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-10 space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-softTeal font-bold">Внимание</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-textDark">Открийте двойките</h2>
+                </div>
+
+                <div class="emotional-card p-6 sm:p-10 rounded-2xl">
+                    <div class="flex justify-between items-center mb-6 text-xs uppercase tracking-widest font-semibold text-textMuted border-b border-warmBorder pb-3">
+                        <div>Ходове: <span id="memory-moves" class="font-bold text-textDark">0</span></div>
+                        <div>Намерени: <span id="memory-matches" class="font-bold text-softTeal">0</span> / 4</div>
+                        <button id="memory-restart" class="text-warmAccent hover:underline font-bold transition-colors">Нова игра</button>
+                    </div>
+
+                    <div id="memory-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-xl mx-auto"></div>
+
+                    <div id="memory-win-msg" class="hidden mt-6 text-center bg-tealLight p-6 rounded-xl border border-softTeal/30">
+                        <h3 class="font-serif text-2xl font-normal text-textDark mb-2">Отличен резултат!</h3>
+                        <p class="text-xs text-textMuted mb-4 font-light">Успешно открихте всички двойки символи.</p>
+                        <button onclick="initMemoryGame()" class="bg-softTeal text-white text-xs uppercase tracking-widest font-bold px-6 py-3 rounded-full transition-colors">
+                            Играй отново
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Creative Prompt Subsection -->
+            <div class="max-w-2xl mx-auto text-center space-y-6">
+                <div class="space-y-2">
+                    <span class="text-xs uppercase tracking-widest text-amberGlow font-bold">Вдъхновение</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-normal text-textDark">Творчески кът</h2>
+                </div>
+
+                <div class="emotional-card p-8 sm:p-12 rounded-2xl">
+                    <div id="challenge-box" class="min-h-[90px] flex items-center justify-center mb-6">
+                        <p id="challenge-text" class="font-serif text-xl sm:text-2xl text-textDark italic font-normal">
+                            „Натиснете бутона за вашето случайно предизвикателство.“
+                        </p>
+                    </div>
+                    <button id="challenge-btn" class="bg-warmAccent hover:bg-warmAccent/90 text-white text-xs uppercase tracking-widest font-bold px-7 py-3.5 rounded-full transition-all shadow-sm">
+                        Ново предизвикателство
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="border-t border-warmBorder/80 py-12 px-6 text-center text-textMuted text-xs font-light bg-white">
+        <div class="max-w-5xl mx-auto space-y-3">
+            <div class="flex justify-center gap-2 text-warmAccent mb-2">
+                <i class="fa-solid fa-heart text-[10px]"></i>
+            </div>
+            <p class="font-serif text-xl font-normal text-textDark">„Светът през очите на дете“</p>
+            <p>© Жанет Радева. Всички права запазени.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 1. Quiz Logic
+        const allQuizQuestions = [
+            {
+                question: "Кое е най-ценното в едно искрено приятелство?",
+                options: [
+                    "Подкрепата и взаимното разбиране",
+                    "Да правите само непременни компромиси",
+                    "Да прекарвате времето си отделно"
+                ],
+                correct: 0,
+                explanation: "Приятелството се гради върху доверието и това да бъдеш до някого както в хубави, така и в изпитателни моменти."
+            },
+            {
+                question: "Как въображението ни помага в ежедневието?",
+                options: [
+                    "Обогатява начина, по който виждаме света около нас",
+                    "Пречи ни да се фокусираме върху важните неща",
+                    "Няма практическа стойност"
+                ],
+                correct: 0,
+                explanation: "Въображението превръща обикновените детайли във вдъхновяващи истории и отваря нови перспективи."
+            },
+            {
+                question: "Какво прави една добра постъпка истински важна?",
+                options: [
+                    "Тя носи искрена радост без очакване за отплата",
+                    "Тя трябва винаги да бъде забелязана от всички",
+                    "Тя се прави само по задължение"
+                ],
+                correct: 0,
+                explanation: "Истинската добрина идва от вътрешен подтик и създава топлина както за този, който я получава, така и за този, който я прави."
+            },
+            {
+                question: "Какво правим, когато приятел преминава през труден момент?",
+                options: [
+                    "Изслушваме го и му показваме, че не е сам",
+                    "Оставяме го да се справи напълно сам без дума",
+                    "Даваме му съвети само ако той ни покани на парти"
+                ],
+                correct: 0,
+                explanation: "Да бъдеш добър приятел означава да предложиш внимание и подкрепа, когато някой има нужда от това."
+            },
+            {
+                question: "Защо е важно да пазим мечтите си?",
+                options: [
+                    "Защото те ни дават посока и смелост да вървим напред",
+                    "Защото мечтите са само за малките деца",
+                    "Защото така ще задоволим очакванията на чуждите хора"
+                ],
+                correct: 0,
+                explanation: "Мечтите ни вдъхновяват да израстваме и да откриваме нови възможности в живота."
+            },
+            {
+                question: "Какво означава да приемаме другите такива, каквито са?",
+                options: [
+                    "Да уважаваме техните различия и уникалност",
+                    "Да се опитваме да ги променим според нашето мнение",
+                    "Да не обръщаме внимание на никого около нас"
+                ],
+                correct: 0,
+                explanation: "Всеки човек е различен и истинската доброта се изразява в уважение към тази индивидуалност."
+            },
+            {
+                question: "Как промяната ни помага да растем?",
+                options: [
+                    "Отваря ни врати към нови знания и опит",
+                    "Прави ни по-несигурни и плашливи",
+                    "Промяната никога не носи нищо добро"
+                ],
+                correct: 0,
+                explanation: "Промяната е естествена част от живота, която ни помага да научаваме нови уроци за себе си."
+            }
+        ];
+
+        let quizData = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        function getRandomQuizQuestions() {
+            // Shuffle and pick 3 unique questions from the pool
+            const shuffled = [...allQuizQuestions].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, 3);
+        }
+
+        const questionText = document.getElementById('quiz-question-text');
+        const optionsContainer = document.getElementById('quiz-options');
+        const progressIndicator = document.getElementById('quiz-progress');
+        const scoreIndicator = document.getElementById('quiz-score-indicator');
+        const explanationBox = document.getElementById('quiz-explanation-box');
+        const explanationText = document.getElementById('quiz-explanation-text');
+        const nextBtn = document.getElementById('quiz-next-btn');
+        const questionBox = document.getElementById('quiz-question-box');
+        const resultBox = document.getElementById('quiz-result-box');
+        const finalScoreText = document.getElementById('quiz-final-score');
+        const finalMsgText = document.getElementById('quiz-final-message');
+        const restartQuizBtn = document.getElementById('quiz-restart-btn');
+
+        function startNewQuizSession() {
+            quizData = getRandomQuizQuestions();
+            currentQuestionIndex = 0;
+            score = 0;
+            resultBox.classList.add('hidden');
+            questionBox.classList.remove('hidden');
+            loadQuizQuestion();
+        }
+
+        function loadQuizQuestion() {
+            answered = false;
+            explanationBox.classList.add('hidden');
+            const currentQ = quizData[currentQuestionIndex];
+            progressIndicator.innerText = `Въпрос ${currentQuestionIndex + 1} от ${quizData.length}`;
+            scoreIndicator.innerText = `Точки: ${score}`;
+            questionText.innerText = currentQ.question;
+            optionsContainer.innerHTML = '';
+
+            // Shuffle options for extra variety each time
+            const shuffledOptions = currentQ.options.map((opt, origIdx) => ({ text: opt, isCorrect: origIdx === currentQ.correct }))
+                .sort(() => 0.5 - Math.random());
+
+            shuffledOptions.forEach((optObj) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 bg-creamBg border border-warmBorder rounded-xl text-xs text-textDark font-medium hover:border-warmAccent transition-all";
+                btn.innerText = optObj.text;
+                btn.onclick = () => selectQuizOption(optObj.isCorrect, btn, shuffledOptions);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectQuizOption(isCorrect, selectedBtn, shuffledOptions) {
+            if (answered) return;
+            answered = true;
+            const currentQ = quizData[currentQuestionIndex];
+
+            const allBtns = optionsContainer.querySelectorAll('button');
+            allBtns.forEach((btn, idx) => {
+                btn.disabled = true;
+                if (shuffledOptions[idx].isCorrect) {
+                    btn.classList.add('border-softTeal', 'bg-tealLight', 'text-softTeal', 'font-bold');
+                } else if (btn === selectedBtn) {
+                    btn.classList.add('border-warmAccent', 'bg-warmAccent/10', 'text-warmAccent');
+                }
+            });
+
+            if (isCorrect) {
+                score++;
+                scoreIndicator.innerText = `Точки: ${score}`;
+            }
+
+            explanationText.innerText = currentQ.explanation;
+            explanationBox.classList.remove('hidden');
+
+            if (currentQuestionIndex === quizData.length - 1) {
+                nextBtn.innerText = "Вижте резултата";
+            } else {
+                nextBtn.innerText = "Следващ въпрос";
+            }
+        }
+
+        nextBtn.onclick = () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuizQuestion();
+            } else {
+                questionBox.classList.add('hidden');
+                explanationBox.classList.add('hidden');
+                resultBox.classList.remove('hidden');
+                finalScoreText.innerText = `Резултат: ${score} от ${quizData.length}`;
+                finalMsgText.innerText = score === quizData.length 
+                    ? "Прекрасно усещане за темите!" 
+                    : "Благодарим за участието!";
+            }
+        };
+
+        restartQuizBtn.onclick = startNewQuizSession;
+
+        // Initialize first quiz session
+        startNewQuizSession();
+
+        // 2. Memory Game Logic
+        const memoryIcons = [
+            { id: 1, icon: 'fa-book-open' },
+            { id: 2, icon: 'fa-leaf' },
+            { id: 3, icon: 'fa-sun' },
+            { id: 4, icon: 'fa-heart' }
+        ];
+
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let moves = 0;
+        let isChecking = false;
+
+        const memoryGrid = document.getElementById('memory-grid');
+        const memoryMoves = document.getElementById('memory-moves');
+        const memoryMatches = document.getElementById('memory-matches');
+        const memoryWinMsg = document.getElementById('memory-win-msg');
+
+        function initMemoryGame() {
+            memoryGrid.innerHTML = '';
+            memoryWinMsg.classList.add('hidden');
+            matchedPairs = 0;
+            moves = 0;
+            flippedCards = [];
+            isChecking = false;
+            memoryMoves.innerText = moves;
+            memoryMatches.innerText = matchedPairs;
+
+            let deck = [...memoryIcons, ...memoryIcons]
+                .sort(() => Math.random() - 0.5)
+                .map((item, index) => ({ ...item, uniqueId: index }));
+
+            deck.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "h-24 bg-creamBg border border-warmBorder rounded-xl flex items-center justify-center cursor-pointer transition-all select-none shadow-sm hover:border-softTeal";
+                
+                card.innerHTML = `
+                    <div class="card-front text-warmBorder text-base font-bold">?</div>
+                    <div class="card-back hidden text-warmAccent text-2xl">
+                        <i class="fa-solid ${item.icon}"></i>
+                    </div>
+                `;
+
+                card.onclick = () => flipCard(card, item);
+                memoryGrid.appendChild(card);
+            });
+        }
+
+        function flipCard(card, item) {
+            if (isChecking) return;
+            if (card.classList.contains('matched') || card.classList.contains('flipped')) return;
+
+            card.classList.add('flipped', 'border-warmAccent', 'bg-white');
+            card.querySelector('.card-front').classList.add('hidden');
+            card.querySelector('.card-back').classList.remove('hidden');
+
+            flippedCards.push({ card, item });
+
+            if (flippedCards.length === 2) {
+                moves++;
+                memoryMoves.innerText = moves;
+                isChecking = true;
+
+                if (flippedCards[0].item.id === flippedCards[1].item.id) {
+                    flippedCards[0].card.classList.add('matched', 'border-softTeal', 'bg-tealLight');
+                    flippedCards[1].card.classList.add('matched', 'border-softTeal', 'bg-tealLight');
+                    matchedPairs++;
+                    memoryMatches.innerText = matchedPairs;
+                    flippedCards = [];
+                    isChecking = false;
+
+                    if (matchedPairs === memoryIcons.length) {
+                        memoryWinMsg.classList.remove('hidden');
+                    }
+                } else {
+                    setTimeout(() => {
+                        flippedCards.forEach(f => {
+                            f.card.classList.remove('flipped', 'border-warmAccent', 'bg-white');
+                            f.card.querySelector('.card-front').classList.remove('hidden');
+                            f.card.querySelector('.card-back').classList.add('hidden');
+                        });
+                        flippedCards = [];
+                        isChecking = false;
+                    }, 800);
+                }
+            }
+        }
+
+        document.getElementById('memory-restart').onclick = initMemoryGame;
+        initMemoryGame();
+
+        // 3. Creative Prompts
+        const challenges = [
+            "Опишете в три изречения сутрешния вятър, ако той имаше глас.",
+            "Нарисувайте или напишете за предмет, който пази специален спомен.",
+            "Ако мечтите имаха цвят, какъв щеше да бъде той днес?",
+            "Напишете четири стиха за тишината преди дъжд.",
+            "Опишете място, където се чувствате напълно спокойни."
+        ];
+
+        const challengeText = document.getElementById('challenge-text');
+        const challengeBtn = document.getElementById('challenge-btn');
+
+        challengeBtn.onclick = () => {
+            let randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
+            challengeText.style.opacity = '0';
+            setTimeout(() => {
+                challengeText.innerText = `„${randomChallenge}“`;
+                challengeText.style.opacity = '1';
+            }, 200);
+        };
+        challengeText.style.transition = 'opacity 0.2s ease-in-out';
+    </script>
+</body>
+</html>
